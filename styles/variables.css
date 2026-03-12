@@ -2,3 +2,22 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root {
+  --decor-element-color:  rgba(255, 0, 112, 1);
+  --decor-element-display: flex;
+  --bg-img: url(../images/cover-image-dark.png);
+  --accent-button-color: rgba(255, 0, 112, 1);
+  --accent-color: rgba(255, 0, 112, 1);
+  --main-font: IBM Plex mono;
+  --accent-title-section-color: rgba(255, 0, 112, 1);
+  --accent-link-color: rgba(255, 0, 112, 1);
+  --accent-text-color: rgba(241, 178, 206, 1);
+  --accent-text-weight: 400;
+  --accent-height: 100vh;
+  --accent-size: 100%;
+   --accent-width-content: 100%;
+  --accent-title-color: rgba(219, 0, 255, 1);
+  --shadow-color: 4px 4px 0 rgba(255, 0, 112, 1);
+  --accent-subtitle-color:  rgba(0, 0, 40, 1);
+  --shadow-color-footer: rgba(255, 0, 112, 1);
+}

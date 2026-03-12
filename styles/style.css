@@ -1,5 +1,461 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  width: 375px;
+  background-position: center;
+  background-attachment: fixed;
+  background-image: var(--bg-img);
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
+
+.header::before {
+  content: "";
+  top: 10px;
+  right: 10px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-width: 1px 1px 0 0;
+  border-style: solid;
+  border-color: var(--decor-element-color);
+}
+.header::after {
+  content: "";
+  bottom: 10px;
+  left: 10px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-width: 0 0 1px 1px;
+  border-style: solid;
+  border-color: var(--decor-element-color);
+}
+
+.decoration {
+  display: var(--decor-element-display);
+  position: absolute;
+  justify-self: end;
+  height: 26px;
+  font-family: var(--main-font), sans-serif;
+  font-weight: var(--accent-text-weight);
+  font-size: 18px;
+  line-height: 25px;
+  color: var(--accent-color);
+  margin-inline-end: 19px;
+  margin-block-start: 10px;
+}
+
+.point::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  margin-block-start: 8px;
+  margin-inline-start: 10px;
+}
+
+.header {
+  position: relative;
+  height: var(--accent-height);
+  min-height: 668px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content 1fr;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+}
+
+.header__theme-menu {
+  grid-row: 1;
+  grid-column: 1;
+  justify-self: end;
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  font-family: var(--main-font), sans-serif;
+  font-weight: var(--accent-text-weight);
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+  color: var(--accent-button-color);
+  background-color: transparent;
+  border: none;
+  width: 70px;
+  height: 26px;
+}
+
+:hover.header__theme-menu-button {
+  outline: 0.5px solid var(--accent-button-color);
+}
+
+:focus-visible.header__theme-menu-button {
+  outline: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+}
+
+.header-title {
+  display: block;
+  grid-row: 2;
+  font-family: var(--main-font), sans-serif;
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.8;
+  color: var(--accent-title-color);
+  text-shadow: var(--shadow-color);
+}
+
+.header-text {
+  display: block;
+  align-self: center;
+  grid-row: 3;
+}
+
+.subtitle-decor {
+  background-color: var(--accent-color);
+  font-family: var(--main-font), sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  color: var(--accent-subtitle-color);
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4fr;
+  margin-block-start: 40px;
+  margin-block-end: 40px;
+  gap: 50px;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+}
+
+.section {
+  display: grid;
+  gap: 20px;
+}
+
+.section-title {
+  font-family: var(--main-font), sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--accent-title-section-color);
+}
+
+.article-list {
+  display: grid;
+  gap: 20px;
+}
+
+.subtitle-additional {
+  display: block;
+  margin-block-end: 20px;
+}
+
+.subtitle-another-style {
+  font-weight: 400;
+}
+
+.link {
+  text-shadow: 2px 1px var(--accent-link-color);
+  text-decoration: none;
+}
+
+:hover.link {
+  text-decoration: underline;
+}
+
+:focus.link {
+  outline: 0.5px solid var(--accent-text-color);
+}
+
+.section-text {
+  font-family: var(--main-font), sans-serif;
+  font-weight: var(--accent-text-weight);
+  font-size: 18px;
+  line-height: 23.4px;
+  color: var(--accent-text-color);
+  margin-block-start: 10px;
+}
+
+.section-img {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section-img-contant {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.img__item {
+  box-sizing: border-box;
+  display: grid;
+  justify-self: center;
+  width: 100%;
+  margin: auto;
+}
+
+.image {
+  box-sizing: border-box;
+  inline-size: var(--accent-size);
+  block-size: var(--accent-size);
+  max-block-size: var(--accent-size);
+  object-fit: cover;
+}
+
+.footer {
+  display: grid;
+  position: relative;
+  height: var(--accent-height);
+  min-height: 668px;
+  width: var(--accent-width-content);
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content 1fr;
+  padding-inline-start: 14px;
+  padding-inline-end: 13px;
+}
+
+.footer-slogan {
+  grid-row: 2;
+  align-self: center;
+  justify-self: center;
+  font-family: var(--main-font), sans-serif;
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.8;
+  color: var(--accent-title-color);
+  text-shadow: 2px 2px 0 var(--shadow-color-footer);
+}
+
+.footer::before {
+  content: "";
+  top: 10px;
+  right: 10px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-width: 1px 1px 0 0;
+  border-style: solid;
+  border-color: var(--decor-element-color);
+}
+
+.footer::after {
+  content: "";
+  bottom: 10px;
+  left: 10px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-width: 0 0 1px 1px;
+  border-style: solid;
+  border-color: var(--decor-element-color);
+}
+
+@media (width >= 768px) {
+  .page {
+    width: 768px;
+  }
+
+  .header::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .header::after {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .decoration {
+    top: 10px;
+  }
+
+  .point::after {
+    margin-right: 10px;
+  }
+
+  .header {
+    min-height: 1024px;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 20px;
+  }
+
+  .header__theme-menu {
+    grid-row: 1;
+    grid-column: 4;
+    align-self: center;
+  }
+
+  .header-title {
+    align-self: center;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    grid-column: 1/5;
+    grid-row: 2;
+    justify-self: flex-start;
+    margin-inline-start: -20px;
+  }
+
+  .header-text {
+    grid-column: 3/5;
+    grid-row: 3;
+    align-self: center;
+    justify-self: end;
+  }
+
+  .main {
+    gap: 80px;
+    margin-block-start: 60px;
+    padding-inline-start: 20px;
+    padding-inline-end: 20px;
+    margin-block-end: 60px;
+  }
+
+  .section {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .section-title {
+    grid-column: 1;
+    width: 236px;
+  }
+
+  .section-text {
+    grid-column: 2/3;
+    justify-self: stretch;
+  }
+
+  .article-list {
+    grid-column: 2/4;
+  }
+
+  .section-alternate {
+    grid-template-rows: 4fr;
+  }
+
+  .article-list__alternate {
+    grid-row: 2/4;
+    grid-column: 1/4;
+  }
+
+  .section-img {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .section-img-contant {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, min-content);
+    box-sizing: border-box;
+    grid-auto-flow: dense;
+    gap: 20px;
+  }
+
+  .image {
+    box-sizing: border-box;
+    inline-size: var(--accent-size);
+    block-size: var(--accent-size);
+    max-block-size: var(--accent-size);
+    object-fit: cover;
+  }
+
+  .img__item {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  .img__item:nth-child(1) {
+    grid-column: 1/3;
+    grid-row: 1;
+  }
+
+  .img__item:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1/3;
+  }
+
+  .img__item:nth-child(3) {
+    grid-row: 2/4;
+  }
+
+  .img__item:nth-child(4) {
+    grid-row: 2;
+  }
+
+  .img__item:nth-child(5) {
+    grid-column: 2/4;
+    grid-row: 3;
+  }
+
+  .footer {
+    height: 100vh;
+    min-height: 1024px;
+  }
+
+  .footer-slogan {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .footer::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .footer::after {
+    margin-bottom: 20px;
+    left: 20px;
+  }
+}
+
+@media (width >= 1024px) {
+  .page {
+    width: 1024px;
+  }
+
+  .header {
+    min-height: 768px;
+  }
+
+  .header__theme-menu {
+    grid-column: 2/4;
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .section-title {
+    width: auto;
+  }
+
+  .article-list__alternate {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer {
+    min-height: 768px;
+  }
+}
+/* переделать шапку профиля с мин контентом*/
