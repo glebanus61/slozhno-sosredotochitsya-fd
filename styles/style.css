@@ -2,7 +2,6 @@
 
 .page {
   width: 375px;
-  position: relative;
   background-color: var(--bg-color);
   background-position: center;
   background-attachment: fixed;
@@ -249,30 +248,6 @@
   text-shadow: 2px 2px 0 var(--shadow-color-footer);
 }
 
-.corners::before {
-  content: "";
-  top: 10px;
-  right: 10px;
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  border-width: 1px 1px 0 0;
-  border-style: solid;
-  border-color: var(--decor-element-color);
-}
-
-.corners::after {
-  content: "";
-  bottom: 10px;
-  left: 10px;
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  border-width: 0 0 1px 1px;
-  border-style: solid;
-  border-color: var(--decor-element-color);
-}
-
 @media (width >= 768px) {
   .page {
     width: 768px;
@@ -284,7 +259,7 @@
   }
 
   .corners::after {
-    bottom: 20px;
+    bottom: -10px;
     left: 20px;
   }
 
