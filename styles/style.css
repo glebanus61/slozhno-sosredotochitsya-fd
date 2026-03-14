@@ -2,24 +2,28 @@
 
 .page {
   width: 375px;
+  position: relative;
+  background-color: var(--bg-color);
   background-position: center;
   background-attachment: fixed;
   background-image: var(--bg-img);
+  background-size: cover;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
 
-.header::before {
+.corners::before {
   content: "";
   top: 10px;
   right: 10px;
   position: absolute;
   width: 25px;
   height: 25px;
-  border-width: 1px 1px 0 0;
+  border-width: 1px 1px 0px 0px;
   border-style: solid;
   border-color: var(--decor-element-color);
 }
-.header::after {
+
+.corners::after {
   content: "";
   bottom: 10px;
   left: 10px;
@@ -245,7 +249,7 @@
   text-shadow: 2px 2px 0 var(--shadow-color-footer);
 }
 
-.footer::before {
+.corners::before {
   content: "";
   top: 10px;
   right: 10px;
@@ -257,7 +261,7 @@
   border-color: var(--decor-element-color);
 }
 
-.footer::after {
+.corners::after {
   content: "";
   bottom: 10px;
   left: 10px;
@@ -274,12 +278,12 @@
     width: 768px;
   }
 
-  .header::before {
+  .corners::before {
     top: 20px;
     right: 20px;
   }
 
-  .header::after {
+  .corners::after {
     bottom: 20px;
     left: 20px;
   }
@@ -416,12 +420,12 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-  .footer::before {
+  .corners::before {
     top: 20px;
     right: 20px;
   }
 
-  .footer::after {
+  .corners::after {
     margin-bottom: 20px;
     left: 20px;
   }
@@ -458,4 +462,3 @@
     min-height: 768px;
   }
 }
-/* переделать шапку профиля с мин контентом*/
