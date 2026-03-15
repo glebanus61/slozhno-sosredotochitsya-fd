@@ -38,7 +38,6 @@
   display: var(--decor-element-display);
   position: absolute;
   justify-self: end;
-  height: 26px;
   font-family: var(--main-font), sans-serif;
   font-weight: var(--accent-text-weight);
   font-size: 18px;
